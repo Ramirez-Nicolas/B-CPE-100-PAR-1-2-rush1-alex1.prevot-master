@@ -1,0 +1,31 @@
+/*
+** EPITECH PROJECT, 2020
+** rush-1-1.c
+** File description:
+** 
+*/
+void rush(int x, int y)
+{
+    for(int compty = 1; compty <= y; compty = compty + 1)
+    {
+        for(int comptx = 1; comptx <= x; comptx = comptx +1)
+            caractere(x, y, comptx, compty);
+                my_putchar('\n');
+    }
+}
+
+int caractere(int x, int y, int comptx, int compty)
+{
+    if (x > 2147483647 || y > 2147483647)
+        return (0);
+    if ((compty == 1 && comptx == 1) || (compty == y && comptx == x))
+        my_putchar('o');
+    else if ((compty == y && comptx == 1) || (compty == 1 && comptx == x))
+        my_putchar('o');
+    else if (compty == 1 || compty == y)
+        my_putchar('-');
+    else if (comptx == x || comptx == 1)
+        my_putchar('|');
+    else
+        my_putchar(' ');
+}
